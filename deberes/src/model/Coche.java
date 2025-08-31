@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Random;
+
 public class Coche {
 
     private Motor motor;
@@ -7,15 +9,25 @@ public class Coche {
     private double averias;
 
 
-    public Coche(){}
-
-    public Coche(String marca, double averias){
-        this.marca = marca;
-        this.averias = averias;
+    public Coche() {
     }
 
-    public double getAverias() {
-        return averias;
+    public Coche(String marca, double averias, Motor motor) {
+        this.marca = marca;
+        this.averias = averias;
+        this.motor = motor;
+    }
+
+    public void acumularAveria(String averias) {
+        Random random = new Random();
+        double gastado = random.nextDouble(100, 500);
+        averias += gastado;
+        if ("aceite".equalsIgnoreCase(averias)) {
+            motor.setLitros_aceite(motor.getLitros_aceite() + 10);
+        } else {
+            motor.setLitros_aceite(motor.getLitros_aceite() + random.nextInt(0, 100));
+        }
+
     }
 
     public Motor getMotor() {
@@ -26,10 +38,6 @@ public class Coche {
         this.motor = motor;
     }
 
-    public void setAverias(double averias) {
-        this.averias = averias;
-    }
-
     public String getMarca() {
         return marca;
     }
@@ -38,9 +46,12 @@ public class Coche {
         this.marca = marca;
     }
 
-    public void acumularAveria(double costo){
+    public double getAverias() {
+        return averias;
+    }
 
-        this.averias += costo;
+    public void setAverias(double averias) {
+        this.averias = averias;
     }
 }
 

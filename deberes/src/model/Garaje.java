@@ -9,17 +9,26 @@ public class Garaje {
     private int coches_atendiendo;
     private boolean disponibilidad = false;
 
-    ArrayList<Coche>coches = new ArrayList<>();
+//    ArrayList<Coche>coches = new ArrayList<>();
 
-    public void aceptarCochec(Coche coche, String averia_ascociada){
 
-        if(this.disponibilidad = false){
+    public Garaje() {
 
-            this.coche = coche;
-            this.averia_ascociada = averia_ascociada;
-            this.disponibilidad = true;
+        this.coche = null;
+        this.averia_ascociada = "";
+        this.coches_atendiendo  = 0;
+    }
 
+    public boolean aceptarCoche(Coche coche, String averia_ascociada){
+        if(coche != null){
+            System.out.println("Perdon,garaje ya esta ocupado");
+            return false;
         }
+        this.coche = coche;
+        this.averia_ascociada = averia_ascociada;
+
+
+
     }
 
     public boolean devolverCoche(){
@@ -59,11 +68,11 @@ public class Garaje {
         this.disponibilidad = disponibilidad;
     }
 
-    public ArrayList<Coche> getCoches() {
-        return coches;
-    }
-
-    public void setCoches(ArrayList<Coche> coches) {
-        this.coches = coches;
-    }
+//    public ArrayList<Coche> getCoches() {
+//        return coches;
+//    }
+//
+//    public void setCoches(ArrayList<Coche> coches) {
+//        this.coches = coches;
+//    }
 }

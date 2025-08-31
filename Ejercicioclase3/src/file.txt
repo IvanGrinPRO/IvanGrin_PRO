@@ -1,0 +1,1 @@
+Usuario{nombre='qwe', apellido='eqw', correo='qwe@gmail.com', telefono=42345}Usuario{nombre='qwe', apellido='eqw', correo='qwe@gmail.com', telefono=42345}Usuario{nombre='qwe', apellido='eqw', correo='qwe@gmail.com', telefono=42345}Usuario{nombre='qwe', apellido='eqw', correo='qwe@gmail.com', telefono=42345}
